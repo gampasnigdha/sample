@@ -1,0 +1,24 @@
+#######################
+# Aurea Central Jervis
+#######################
+# User guide and documentation can be found at: https://github.com/trilogy-group/central-jervis
+# This project is based on https://github.com/samrocketman/jervis
+
+language: shell
+
+env:
+  - TEST="test1"
+script: 
+  - echo "Hello World."
+
+branches:
+  only:
+    - master
+    - jervis_simple
+
+jenkins:
+  pipeline_jenkinsfile: Jenkinsfile
+  collect:
+    collect: 
+      artifacts: build/libs/*.jar
+      junit: build/test-results/*.xml
